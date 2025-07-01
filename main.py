@@ -484,9 +484,7 @@ def random_train(packed_data, real_indices_class, nnodes_all, model, runs):
         fid_test.append(fidelity_test.item()*100)
     return prob_list, fid_train, fid_test
 
-# =====================
-# Main Execution Logic (example usage)
-# =====================
+
 if __name__ == '__main__':
     torch.manual_seed(0)
     # Train the original model
@@ -504,8 +502,8 @@ if __name__ == '__main__':
             loss = F.cross_entropy(output, y.view(-1))
             loss.backward()
             optimizer.step()
-    # Example: GDM training
+    # GDM training
     nnodes_all, real_indices_class = prepare_train_indices(packed_data, args)
     model_real, model_syn, feat_syn, adj_syn, labels_syn = GDM_training(packed_data, nnodes_all, real_indices_class, args)
-    # Example: Evaluation
+    # Evaluation
     pred_acc, acc_train, acc_test, fid_train, fid_test = test_acc_fidelity(feat_syn, adj_syn, labels_syn, packed_data, model, args) 
