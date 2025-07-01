@@ -56,7 +56,7 @@ GDM/
 ├── utils.py             # Utility functions
 ├── config.json          # Configuration file
 ├── requirements.txt     # Python dependencies
-└── datasets/            # Dataset directory (not tracked in git)
+└── datasets/            # Dataset directory
     ├── BA_2Motifs/
     ├── Graph-SST5/
     └── ...              # Other datasets
